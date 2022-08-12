@@ -1,6 +1,6 @@
 <script setup>
-import { useRoute } from 'vue-router';
-import { ref, watch } from 'vue';
+import { useRoute, onBeforeRouteUpdate, onBeforeRouteLeave } from 'vue-router';
+import { ref } from 'vue';
 import api from '@/api/article';
 import ListArticle from '@/components/ListArticle.vue';
 
@@ -10,7 +10,7 @@ const article = ref();
 
 article.value = await api.find(route.params.id)
 
-watch(async () => {
+onBeforeRouteUpdate(async () => {
   article.value = await api.find(route.params.id)
 })
 

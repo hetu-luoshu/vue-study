@@ -44,7 +44,7 @@ const router = createRouter({
           path: "/articleShow/:id(\\d+)",
           name: "article-show",
           component: Show,
-          alias: "/:id(\\d+)"
+          // alias: "/:id(\\d+)"
         },
         {
           path: "userShow/:id",
