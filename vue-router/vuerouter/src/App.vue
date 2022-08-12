@@ -1,21 +1,18 @@
 <script setup>
-import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
-  <navigation></navigation>
   <Suspense>
     <template #default>
-      <div class="router-view">
-        <router-view></router-view>
-      </div>
+      <router-view></router-view>
     </template>
   </Suspense>
 </template>
 
-<style lang="scss" scoped>
-.router-view {
-  background-color: #979090;
-  padding: 10px;
+<style lang="scss">
+
+.link-active {
+  background-color: rgb(21, 109, 79);
+  color: #FFF;
 }
 </style>

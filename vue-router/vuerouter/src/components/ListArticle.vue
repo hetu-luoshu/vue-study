@@ -6,8 +6,8 @@ const articles = ref(await api.all())
 
 
 <template>
-<div>
-  <router-link v-for="article in articles" :key="article.id" :to="{ name: 'article-show', params: { id: article.id } }" class="list-item">{{ article.title }}</router-link>
+<div class="list">
+  <router-link v-for="article in articles" :key="article.id" :to="{ path: '/' + article.id, params: { id: article.id } }" class="list-item">{{ article.title }}</router-link>
 </div>
 </template>
 
@@ -17,7 +17,6 @@ const articles = ref(await api.all())
   text-decoration: none;
   display: block;
   padding: 10px;
-  background-color: aquamarine;
   margin-bottom: 8px;
 }
 </style>
