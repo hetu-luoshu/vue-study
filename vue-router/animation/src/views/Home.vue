@@ -18,13 +18,5 @@
   </div>
 </template>
 
-<style lang="scss" scoped>  
-.page {
-  position: absolute;
-
-  p {
-    margin-top: 20px;
-    line-height: 1.7;
-  }
-}
+<style lang="scss" scoped>
 </style>
