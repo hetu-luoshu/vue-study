@@ -5,14 +5,21 @@
   <suspense>
     <template #default>
       <div class="container">
-        <nav>
-          <router-link :to="{ name: 'home' }">home</router-link>
-          <router-link :to="{ name: 'about' }">about</router-link>
-          <router-link :to="{ name: 'article', query: { id: 1 } }">article</router-link>
-        </nav>
 
+        <nav>
+          <template v-for="route in $router.getRoutes()">
+            <router-link :to="{ name: route.name }" v-if="route.meta?.title">
+              {{ route.meta?.title }}
+            </router-link>
+          </template>
+
+          <!-- <router-link :to="{ name: 'article', query: { id: 1 } }">article</router-link> -->
+        </nav>
+        
         <main>
-          <router-view></router-view>
+          <router-view #default="{ Component }">
+            <component :is="Component"></component>
+          </router-view>
         </main>
 
       </div>
