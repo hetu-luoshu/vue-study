@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  // width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #666;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.page {
+  border: 10px solid #eee;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: #fff;
+  p {
+    margin-top: 20px;
+    line-height: 1.7;
+  }
+}
